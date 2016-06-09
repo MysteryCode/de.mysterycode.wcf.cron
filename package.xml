@@ -23,10 +23,12 @@
 		<instruction type="file">files.tar</instruction>
 		<instruction type="eventListener">xml/eventListener.xml</instruction>
 		<instruction type="option">xml/option.xml</instruction>
+		<instruction type="language">language/*.xml</instruction>
 	</instructions>
 	
 	<instructions type="update" fromversion="1.0.0">
 		<instruction type="file">files.tar</instruction>
 		<instruction type="option">xml/option.xml</instruction>
+		<instruction type="language">language/*.xml</instruction>
 	</instructions>
 </package>
