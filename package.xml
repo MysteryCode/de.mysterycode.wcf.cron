@@ -21,6 +21,7 @@
 	
 	<instructions type="install">
 		<instruction type="file">files.tar</instruction>
-		<instruction type="eventListener">eventListener.xml</instruction>
+		<instruction type="eventListener">xml/eventListener.xml</instruction>
+		<instruction type="option">xml/option.xml</instruction>
 	</instructions>
 </package>

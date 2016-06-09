@@ -18,6 +18,9 @@ class CronjobDisableExecutionListener implements IParameterizedEventListener {
 	 * @see \wcf\system\event\IEventListener::execute()
 	 */
 	public function execute($eventObj, $className, $eventName, array &$parameters) {
+		if (CRONJOB_EXECUTE)
+			return;
+		
 		WCF::getTPL()->assign(array(
 			'executeCronjobs' => false
 		));
