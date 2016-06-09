@@ -4,7 +4,7 @@
 		<packagename><![CDATA[External Cronjob Execution API]]></packagename>
 		<packagedescription><![CDATA[Disables automatic cronjob execution and implements a script callable via browser or shell.]]></packagedescription>
 		
-		<version><![CDATA[1.0.0]]></version>
+		<version><![CDATA[1.0.1]]></version>
 		<date><![CDATA[2016-06-09]]></date>
 		
 		<packageurl>https://www.mysterycode.de</packageurl>
@@ -22,6 +22,11 @@
 	<instructions type="install">
 		<instruction type="file">files.tar</instruction>
 		<instruction type="eventListener">xml/eventListener.xml</instruction>
+		<instruction type="option">xml/option.xml</instruction>
+	</instructions>
+	
+	<instructions type="update" fromversion="1.0.0">
+		<instruction type="file">files.tar</instruction>
 		<instruction type="option">xml/option.xml</instruction>
 	</instructions>
 </package>
