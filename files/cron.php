@@ -1,6 +1,16 @@
 <?php
 define('PACKAGE_ID', 1);
 require_once(__DIR__ . '/global.php');
-use wcf\system\cronjob\CronjobScheduler;
+use wcf\data\application\ApplicationList;
+use wcf\data\cronjob\CronjobAction;
+use wcf\system\WCF;
 
-CronjobScheduler::getInstance()->executeCronjobs();
+$applicationList = new ApplicationList();
+$applicationList->readObjects();
+
+foreach ($applicationList->getObjects() as $application) {
+	WCF::loadRuntimeApplication($application->packageID);
+}
+
+$action = new CronjobAction(array(), 'executeCronjobs');
+$action->executeAction();
