@@ -3,7 +3,7 @@
 	<import>
 		<options>
 			<option name="cronjob_execute">
-				<categoryname>system</categoryname>
+				<categoryname>module.system</categoryname>
 				<optiontype>boolean</optiontype>
 				<defaultvalue><![CDATA[0]]></defaultvalue>
 			</option>
