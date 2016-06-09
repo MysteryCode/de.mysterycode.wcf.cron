@@ -1,10 +1,10 @@
 <?php
 
 namespace wcf\action;
-use wcf\system\cronjob\CronjobScheduler;
+use wcf\data\cronjob\CronjobAction;
 
 /**
- * executes cronjobs on call
+ * executes cronjobs on page calls - or prevents execution
  * 
  * @author	Florian Gail
  * @copyright	2016 Florian Gail <https://www.mysterycode.de/>
@@ -17,6 +17,7 @@ class CronjobExecuteAction extends AbstractAction {
 	 * @see wcf\action\Action::readParameters()
 	 */
 	public function execute() {
-		CronjobScheduler::getInstance()->executeCronjobs();
+		$action = new CronjobAction(array(), 'executeCronjobs');
+		$action->executeAction();
 	}
 }
