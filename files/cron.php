@@ -14,3 +14,5 @@ foreach ($applicationList->getObjects() as $application) {
 
 $action = new CronjobAction(array(), 'executeCronjobs');
 $action->executeAction();
+
+WCF::getSession()->delete();
