@@ -4,35 +4,34 @@
 		<packagename><![CDATA[External Cronjob Execution API]]></packagename>
 		<packagedescription><![CDATA[Disables automatic cronjob execution and implements a script callable via browser or shell.]]></packagedescription>
 		
-		<version><![CDATA[1.0.2]]></version>
-		<date><![CDATA[2016-06-10]]></date>
+		<version><![CDATA[1.1.0]]></version>
+		<date><![CDATA[2016-12-19]]></date>
 		
 		<packageurl>https://www.mysterycode.de</packageurl>
 	</packageinformation>
 	
 	<requiredpackages>
-		<requiredpackage minversion="2.1.0"><![CDATA[com.woltlab.wcf]]></requiredpackage>
+		<requiredpackage minversion="3.0.0 RC 1">com.woltlab.wcf</requiredpackage>
 	</requiredpackages>
-	
+
+	<excludedpackages>
+		<excludedpackage version="3.1.0 Alpha 1">com.woltlab.wcf</excludedpackage>
+	</excludedpackages>
+
 	<authorinformation>
 		<author><![CDATA[Florian Gail]]></author>
 		<authorurl><![CDATA[https://www.mysterycode.de]]></authorurl>
 	</authorinformation>
 	
 	<instructions type="install">
-		<instruction type="file">files.tar</instruction>
+		<instruction type="file" />
 		<instruction type="eventListener">xml/eventListener.xml</instruction>
 		<instruction type="option">xml/option.xml</instruction>
-		<instruction type="language">language/*.xml</instruction>
+		<instruction type="language" />
 	</instructions>
 	
-	<instructions type="update" fromversion="1.0.0">
-		<instruction type="file">files.tar</instruction>
-		<instruction type="option">xml/option.xml</instruction>
-		<instruction type="language">language/*.xml</instruction>
-	</instructions>
-	
-	<instructions type="update" fromversion="1.0.1">
-		<instruction type="file">files.tar</instruction>
+	<instructions type="update" fromversion="1.0.2">
+		<instruction type="file" />
+		<instruction type="eventListener">xml/eventListener.xml</instruction>
 	</instructions>
 </package>

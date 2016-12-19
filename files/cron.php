@@ -12,7 +12,7 @@ foreach ($applicationList->getObjects() as $application) {
 	WCF::loadRuntimeApplication($application->packageID);
 }
 
-$action = new CronjobAction(array(), 'executeCronjobs');
+$action = new CronjobAction([], 'executeCronjobs');
 $action->executeAction();
 
 WCF::getSession()->delete();
