@@ -18,7 +18,7 @@ $action->executeAction();
 
 // send up to 5 outstanding mails
 $limit = min(5, BackgroundQueueHandler::getInstance()->getRunnableCount());
-for($i=0; $i < $limit; $i++) {
+for ($i=0; $i < $limit; $i++) {
 	BackgroundQueueHandler::getInstance()->performNextJob();
 }
 
