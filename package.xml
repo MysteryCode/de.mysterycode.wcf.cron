@@ -4,8 +4,8 @@
 		<packagename><![CDATA[External Cronjob Execution API]]></packagename>
 		<packagedescription><![CDATA[Disables automatic cronjob execution and implements a script callable via browser or shell.]]></packagedescription>
 		
-		<version><![CDATA[1.1.0]]></version>
-		<date><![CDATA[2016-12-19]]></date>
+		<version><![CDATA[1.1.1]]></version>
+		<date><![CDATA[2017-07-05]]></date>
 		
 		<packageurl>https://www.mysterycode.de</packageurl>
 	</packageinformation>
@@ -19,7 +19,7 @@
 	</excludedpackages>
 
 	<authorinformation>
-		<author><![CDATA[Florian Gail]]></author>
+		<author><![CDATA[Florian Gail, Morik]]></author>
 		<authorurl><![CDATA[https://www.mysterycode.de]]></authorurl>
 	</authorinformation>
 	
@@ -30,8 +30,7 @@
 		<instruction type="language" />
 	</instructions>
 	
-	<instructions type="update" fromversion="1.0.2">
+	<instructions type="update" fromversion="1.1.0">
 		<instruction type="file" />
-		<instruction type="eventListener">xml/eventListener.xml</instruction>
 	</instructions>
 </package>
