@@ -4,18 +4,18 @@
 		<packagename><![CDATA[External Cronjob Execution API]]></packagename>
 		<packagedescription><![CDATA[Disables automatic cronjob execution and implements a script callable via browser or shell.]]></packagedescription>
 		
-		<version><![CDATA[1.1.1]]></version>
-		<date><![CDATA[2017-07-05]]></date>
+		<version><![CDATA[1.2.0 Alpha 1]]></version>
+		<date><![CDATA[2017-09-03]]></date>
 		
 		<packageurl>https://www.mysterycode.de</packageurl>
 	</packageinformation>
 	
 	<requiredpackages>
-		<requiredpackage minversion="3.0.0 RC 1">com.woltlab.wcf</requiredpackage>
+		<requiredpackage minversion="3.1.0 Alpha 1">com.woltlab.wcf</requiredpackage>
 	</requiredpackages>
 
 	<excludedpackages>
-		<excludedpackage version="3.1.0 Alpha 1">com.woltlab.wcf</excludedpackage>
+		<excludedpackage version="3.2.0 Alpha 1">com.woltlab.wcf</excludedpackage>
 	</excludedpackages>
 
 	<authorinformation>
@@ -30,7 +30,7 @@
 		<instruction type="language" />
 	</instructions>
 	
-	<instructions type="update" fromversion="1.1.0">
+	<instructions type="update" fromversion="1.1.1">
 		<instruction type="file" />
 	</instructions>
 </package>

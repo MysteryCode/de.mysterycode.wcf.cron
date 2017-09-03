@@ -9,13 +9,4 @@
 			<inherit>1</inherit>
 		</eventlistener>
 	</import>
-	<delete>
-		<eventlistener>
-			<environment>user</environment>
-			<eventclassname>wcf\page\AbstractPage</eventclassname>
-			<eventname>assignVariables</eventname>
-			<listenerclassname>wcf\system\event\listener\CronjobDisableExecutionListener</listenerclassname>
-			<inherit>1</inherit>
-		</eventlistener>
-	</delete>
 </data>
