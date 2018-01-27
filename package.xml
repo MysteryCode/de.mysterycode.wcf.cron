@@ -4,19 +4,20 @@
 		<packagename><![CDATA[External Cronjob Execution API]]></packagename>
 		<packagedescription><![CDATA[Disables automatic cronjob execution and implements a script callable via browser or shell.]]></packagedescription>
 		
-		<version><![CDATA[1.2.0 Alpha 1]]></version>
-		<date><![CDATA[2017-09-03]]></date>
+		<version><![CDATA[1.1.2]]></version>
+		<date><![CDATA[2018-01-27]]></date>
 		
 		<packageurl>https://www.mysterycode.de</packageurl>
 	</packageinformation>
 	
 	<requiredpackages>
-		<requiredpackage minversion="3.1.0 Alpha 1">com.woltlab.wcf</requiredpackage>
+		<requiredpackage minversion="3.0.0">com.woltlab.wcf</requiredpackage>
 	</requiredpackages>
 
-	<excludedpackages>
-		<excludedpackage version="3.2.0 Alpha 1">com.woltlab.wcf</excludedpackage>
-	</excludedpackages>
+	<compatibility>
+		<api version="2018" />
+		<api version="2017" />
+	</compatibility>
 
 	<authorinformation>
 		<author><![CDATA[Florian Gail, Morik]]></author>
