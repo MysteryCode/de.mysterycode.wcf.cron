@@ -2,6 +2,7 @@
 
 namespace wcf\system\event\listener;
 
+use wcf\page\AbstractPage;
 use wcf\system\WCF;
 
 /**
@@ -13,12 +14,13 @@ use wcf\system\WCF;
  * @package      de.mysterycode.wcf.cron
  * @category     WCF
  */
-class CronjobDisableExecutionListener implements IParameterizedEventListener
+class CronjobDisableExecutionListener extends AbstractEventListener
 {
     /**
-     * @inheritDoc
+     * @param   AbstractPage    $eventObj
+     * @param   array           $parameters
      */
-    public function execute($eventObj, $className, $eventName, array &$parameters)
+    public function onAssignVariables(AbstractPage $eventObj, array &$parameters): void
     {
         if (\CRONJOB_EXECUTE) {
             return;

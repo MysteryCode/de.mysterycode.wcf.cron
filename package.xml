@@ -13,7 +13,7 @@
 		<authorurl>https://www.mysterycode.de</authorurl>
 	</authorinformation>
 	<requiredpackages>
-		<requiredpackage minversion="3.1.0">com.woltlab.wcf</requiredpackage>
+		<requiredpackage minversion="5.4.0">com.woltlab.wcf</requiredpackage>
 	</requiredpackages>
 	<instructions type="install">
 		<instruction type="file"/>
