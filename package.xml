@@ -1,37 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<package name="de.mysterycode.wcf.cron" xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com http://www.woltlab.com/XSD/maelstrom/package.xsd">
- 	<packageinformation>
-		<packagename><![CDATA[External Cronjob Execution API]]></packagename>
-		<packagedescription><![CDATA[Disables automatic cronjob execution and implements a script callable via browser or shell.]]></packagedescription>
-		
-		<version><![CDATA[1.1.2]]></version>
-		<date><![CDATA[2018-01-27]]></date>
-		
+<package xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com http://www.woltlab.com/XSD/5.4/package.xsd" name="de.mysterycode.wcf.cron">
+	<packageinformation>
+		<!-- de.mysterycode.wcf.cron -->
+		<packagename>External Cronjob Execution API</packagename>
+		<packagedescription>Disables automatic cronjob execution and implements a script callable via browser or shell.</packagedescription>
+		<version>1.1.2</version>
+		<date>2018-01-27</date>
 		<packageurl>https://www.mysterycode.de</packageurl>
 	</packageinformation>
-	
-	<requiredpackages>
-		<requiredpackage minversion="3.0.0">com.woltlab.wcf</requiredpackage>
-	</requiredpackages>
-
-	<compatibility>
-		<api version="2018" />
-		<api version="2017" />
-	</compatibility>
-
 	<authorinformation>
-		<author><![CDATA[Florian Gail, Morik]]></author>
-		<authorurl><![CDATA[https://www.mysterycode.de]]></authorurl>
+		<author>Florian Gail, Morik</author>
+		<authorurl>https://www.mysterycode.de</authorurl>
 	</authorinformation>
-	
+	<requiredpackages>
+		<requiredpackage minversion="3.1.0">com.woltlab.wcf</requiredpackage>
+	</requiredpackages>
 	<instructions type="install">
-		<instruction type="file" />
-		<instruction type="eventListener">xml/eventListener.xml</instruction>
-		<instruction type="option">xml/option.xml</instruction>
-		<instruction type="language" />
+		<instruction type="file"/>
+		<instruction type="eventListener"/>
+		<instruction type="option"/>
+		<instruction type="language"/>
 	</instructions>
-	
 	<instructions type="update" fromversion="1.1.1">
-		<instruction type="file" />
+		<instruction type="file"/>
 	</instructions>
 </package>
