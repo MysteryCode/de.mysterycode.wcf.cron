@@ -16,11 +16,7 @@ use wcf\system\WCF;
  */
 class CronjobDisableExecutionListener extends AbstractEventListener
 {
-    /**
-     * @param   AbstractPage    $eventObj
-     * @param   array           $parameters
-     */
-    public function onAssignVariables(AbstractPage $eventObj, array &$parameters): void
+    public function onAssignVariables(): void
     {
         if (\CRONJOB_EXECUTE) {
             return;
