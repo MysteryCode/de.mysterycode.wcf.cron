@@ -2,13 +2,31 @@ name: Code Style
 
 on:
   push:
+    branches:
+      - main
+    paths:
+      - '**.php'
+      - '**.ts'
+      - '**.scss'
   pull_request:
+    paths:
+      - '**.php'
+      - '**.ts'
+      - '**.scss'
 
 jobs:
-  phpcs:
-    name: PHPCS
-    runs-on: ubuntu-latest
+  php:
+    name: PHP
+    runs-on: self-hosted
     steps:
-      - uses: actions/checkout@v2
-      - name: PHPCS check
-        uses: chekalsky/phpcs-action@v1
+    - uses: actions/checkout@v3
+    - name: Setup PHP with tools
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: '8.1'
+        extensions: ctype, dom, exif, gd, gmp, hash, intl, json, libxml, mbstring, opcache, pcre, pdo, pdo_mysql, zlib
+        tools: cs2pr, phpcs, php-cs-fixer
+    - name: phpcs
+      run: phpcs -n -q --report=checkstyle | cs2pr
+    - name: php-cs-fixer
+      run: php-cs-fixer fix --dry-run --diff

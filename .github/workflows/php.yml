@@ -2,26 +2,35 @@ name: PHP
 
 on:
   push:
+    branches:
+      - main
+    tags-ignore:
+      - '**'
+    paths:
+      - '**.php'
   pull_request:
+    paths:
+      - '**.php'
 
 jobs:
   syntax:
     name: "Check Syntax (${{ matrix.php }})"
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     strategy:
       fail-fast: false
       matrix:
         php:
-        - '7.4'
-        - '8.0'
         - '8.1'
         - '8.2'
     steps:
+    - uses: actions/checkout@v3
     - name: Set up PHP
       uses: shivammathur/setup-php@v2
       with:
         php-version: ${{ matrix.php }}
-    - uses: actions/checkout@v3
     - run: echo "::add-matcher::.github/php-syntax.json"
+    - name: Remove files to be ignored
+      run: |
+        true
     - run: |
         ! find . -type f -name '*.php' -exec php -l '{}' \; 2>&1 |grep -v '^No syntax errors detected'
