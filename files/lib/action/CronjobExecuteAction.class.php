@@ -2,7 +2,9 @@
 
 namespace wcf\action;
 
-use wcf\data\cronjob\CronjobAction;
+use wcf\data\user\User;
+use wcf\system\cronjob\CronjobScheduler;
+use wcf\system\WCF;
 
 /**
  * executes cronjobs on page calls - or prevents execution
@@ -22,7 +24,12 @@ class CronjobExecuteAction extends AbstractAction
     {
         parent::execute();
 
-        $action = new CronjobAction([], 'executeCronjobs');
-        $action->executeAction();
+        WCF::getSession()->changeUser(new User(null, [
+            'userID' => 0,
+            'username' => 'System',
+        ]), true);
+        WCF::getSession()->disableUpdate();
+
+        CronjobScheduler::getInstance()->executeCronjobs();
     }
 }

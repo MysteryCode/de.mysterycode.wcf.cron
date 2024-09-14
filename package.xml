@@ -4,18 +4,18 @@
 		<!-- de.mysterycode.wcf.cron -->
 		<packagename>External Cronjob Execution API</packagename>
 		<packagedescription>Disables automatic cronjob execution and implements a script callable via browser or shell.</packagedescription>
-		<version>1.1.4</version>
-		<date>2023-03-31</date>
+		<version>1.1.5</version>
+		<date>2024-09-14</date>
 	</packageinformation>
 	<authorinformation>
 		<author>Florian Gail, Morik</author>
 		<authorurl>https://www.mysterycode.de</authorurl>
 	</authorinformation>
 	<requiredpackages>
-		<requiredpackage minversion="5.5.0">com.woltlab.wcf</requiredpackage>
+		<requiredpackage minversion="6.0.17">com.woltlab.wcf</requiredpackage>
 	</requiredpackages>
 	<excludedpackages>
-		<excludedpackage version="6.1.0 Alpha 1">com.woltlab.wcf</excludedpackage>
+		<excludedpackage version="6.2.0 dev 1">com.woltlab.wcf</excludedpackage>
 	</excludedpackages>
 	<instructions type="install">
 		<instruction type="file"/>
@@ -27,4 +27,7 @@
 		<instruction type="file"/>
 		<instruction type="language"/>
 	</instructions>
+    <instructions type="update" fromversion="1.1.4">
+        <instruction type="file"/>
+    </instructions>
 </package>
