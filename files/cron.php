@@ -2,20 +2,12 @@
 
 require_once(__DIR__ . '/global.php');
 
-use wcf\data\application\ApplicationList;
 use wcf\data\user\User;
 use wcf\system\background\BackgroundQueueHandler;
 use wcf\system\cronjob\CronjobScheduler;
 use wcf\system\WCF;
 
 if (!\defined('OFFLINE') || !OFFLINE) {
-    $applicationList = new ApplicationList();
-    $applicationList->readObjects();
-
-    foreach ($applicationList->getObjects() as $application) {
-        WCF::loadRuntimeApplication($application->packageID);
-    }
-
     WCF::getSession()->changeUser(new User(null, [
         'userID' => 0,
         'username' => 'System',
