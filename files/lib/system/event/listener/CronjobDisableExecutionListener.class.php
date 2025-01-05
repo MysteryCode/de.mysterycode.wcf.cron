@@ -2,7 +2,6 @@
 
 namespace wcf\system\event\listener;
 
-use wcf\page\AbstractPage;
 use wcf\system\WCF;
 
 /**
