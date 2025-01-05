@@ -1,3 +1,3 @@
 <?php
 
-\define('CRONJOB_EXECUTE', 0);
+const CRONJOB_EXECUTE = 0;
