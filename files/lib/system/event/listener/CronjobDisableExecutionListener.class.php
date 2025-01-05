@@ -4,6 +4,8 @@ namespace wcf\system\event\listener;
 
 use wcf\system\WCF;
 
+use const CRONJOB_EXECUTE;
+
 /**
  * disables automatic cronjob execution via page call
  *
@@ -17,7 +19,7 @@ class CronjobDisableExecutionListener extends AbstractEventListener
 {
     public function onAssignVariables(): void
     {
-        if (\CRONJOB_EXECUTE) {
+        if (CRONJOB_EXECUTE) {
             return;
         }
 
