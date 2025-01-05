@@ -5,28 +5,29 @@ on:
     branches:
       - main
     paths:
-      - '**.php'
-      - '**.ts'
-      - '**.scss'
+      - "**.php"
   pull_request:
     paths:
-      - '**.php'
-      - '**.ts'
-      - '**.scss'
+      - "**.php"
+
+permissions:
+  contents: read
 
 jobs:
   php:
     name: PHP
     runs-on: self-hosted
     steps:
-    - uses: actions/checkout@v4
-    - name: Setup PHP with tools
-      uses: shivammathur/setup-php@v2
-      with:
-        php-version: '8.3'
-        extensions: ctype, dom, exif, gd, gmp, hash, intl, json, libxml, mbstring, opcache, pcre, pdo, pdo_mysql, zlib
-        tools: cs2pr, phpcs, php-cs-fixer
-    - name: phpcs
-      run: phpcs -n -q --report=checkstyle | cs2pr
-    - name: php-cs-fixer
-      run: php-cs-fixer fix --dry-run --diff
+      - uses: actions/checkout@v4
+      - name: Setup PHP with tools
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.1"
+          extensions: ctype, dom, exif, gd, gmp, hash, intl, json, libxml, mbstring, opcache, pcre, pdo, pdo_mysql, zlib
+          tools: cs2pr, phpcs, php-cs-fixer
+      - name: phpcs
+        run: |
+          sudo update-alternatives --set php /usr/bin/php8.1
+          phpcs -n -q --report=checkstyle | cs2pr
+      - name: php-cs-fixer
+        run: php-cs-fixer fix --dry-run --diff
